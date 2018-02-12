@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
        //
         btnControl.setOnClickListener{
             if (btnControl.text == "Start"){
-                Toast.makeText (this, "Tap Android To Score¡", 3) .show ()
+                Toast.makeText (this, "Tap Android To Score", Toast.LENGTH_LONG) .show ()
                 btnControl.text = "Stop"
                 score = 0
                 txtScore.text = "Score: " + score.toString()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             score -= 100
             txtScore.text = "Score: " + score.toString()
             if (score == 0 || score == -100){
-                Toast.makeText (this, "Game Over", 3) .show ()
+                Toast.makeText (this, "Game Over", Toast.LENGTH_LONG) .show ()
                 score = 0
                 txtScore.text = "Score: " + score.toString()
                 btnImgButton.setTranslationX(-300F)
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         x = ((Math.random () * getScreenWidth()) + 50) .toFloat ()
         imgMole.setTranslationX(x)
         imgMole.setTranslationY(y)
-        timer.schedule(timerTask {ChangeImage()},1000)
+        timer.schedule(timerTask {ChangeImage()},3000)
     }
     fun getScreenWidth(): Float {
         return Resources.getSystem().getDisplayMetrics().widthPixels / 1.4F
